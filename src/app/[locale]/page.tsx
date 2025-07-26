@@ -1,0 +1,29 @@
+import { getTranslations } from 'next-intl/server';
+
+// * components
+import ThemeSelect from '@/components/ThemeSelect';
+import { Link } from '@/i18n/navigation';
+
+const HomePage = async () => {
+  const t = await getTranslations('HomePage');
+
+  return (
+    <article className='h-dvh flex flex-col items-center justify-center gap-y-4'>
+      <h1>{t('title')}</h1>
+
+      <ThemeSelect />
+
+      <div dir='ltr' className='flex gap-x-4 *:underline'>
+        <Link href='/' locale='fa'>
+          fa
+        </Link>
+
+        <Link href='/' locale='en'>
+          en
+        </Link>
+      </div>
+    </article>
+  );
+};
+
+export default HomePage;
