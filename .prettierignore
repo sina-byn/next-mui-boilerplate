@@ -6,4 +6,6 @@
 *.md
 *.mdx
 
+.*
+
 **/node_modules/**
