@@ -37,7 +37,7 @@ const rtlCache = createCache({
 type MUIThemeProviderProps = { dir: 'rtl' | 'ltr'; children: React.ReactNode };
 
 const MUIThemeProvider = ({ dir, children }: MUIThemeProviderProps) => {
-  const theme = useMemo(() => createTheme({ colorSchemes: { dark: true } }), []);
+  const theme = useMemo(() => createTheme({ colorSchemes: { dark: true }, direction: dir }), [dir]);
 
   return (
     <ThemeProvider disableTransitionOnChange theme={theme}>
