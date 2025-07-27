@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "format": "prettier -w **/*",
+    "style": "prettier -w **/*",
     "lint": "next lint",
     "prepare": "npx simple-git-hooks"
   },
@@ -44,6 +44,6 @@
     "typescript": "^5"
   },
   "simple-git-hooks": {
-    "pre-commit": "npm run format"
+    "pre-commit": "npm run style"
   }
 }
