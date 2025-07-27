@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "format": "prettier -w **/*",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "npx simple-git-hooks"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -41,5 +42,8 @@
     "simple-git-hooks": "^2.13.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm run format"
   }
 }
