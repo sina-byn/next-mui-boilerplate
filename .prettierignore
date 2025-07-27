@@ -1,0 +1,9 @@
+*.svg
+*.ico
+*.png
+*.jpg
+*.jpeg
+*.md
+*.mdx
+
+**/node_modules/**
