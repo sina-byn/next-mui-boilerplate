@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 import { setCookie } from 'cookies-next/client';
 
-import { Button, ButtonGroup, useColorScheme } from '@mui/material';
+import { Button, useColorScheme } from '@mui/material';
 
 const ThemeSelect = () => {
   const { mode, setMode, systemMode } = useColorScheme();
@@ -23,15 +23,17 @@ const ThemeSelect = () => {
 
   return (
     <div className='flex items-center gap-x-10'>
-      <ButtonGroup>
-        <Button type='button' onClick={setMode.bind(null, 'light')}>
-          light
-        </Button>
+      <Button
+        type='button'
+        className='bg-blue-500 text-gray-200'
+        onClick={setMode.bind(null, 'light')}
+      >
+        light
+      </Button>
 
-        <Button type='button' onClick={setMode.bind(null, 'dark')}>
-          dark
-        </Button>
-      </ButtonGroup>
+      <Button type='button' onClick={setMode.bind(null, 'dark')}>
+        dark
+      </Button>
     </div>
   );
 };

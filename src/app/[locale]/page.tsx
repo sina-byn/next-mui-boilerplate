@@ -1,8 +1,8 @@
+import { Link } from '@/i18n/navigation';
 import { getTranslations } from 'next-intl/server';
 
 // * components
 import ThemeSelect from '@/components/ThemeSelect';
-import { Link } from '@/i18n/navigation';
 
 const HomePage = async () => {
   const t = await getTranslations('HomePage');

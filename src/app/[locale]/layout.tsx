@@ -1,21 +1,17 @@
+import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 
 // * providers
 import MUIProvider from '@/providers/MUI';
-
 import { NextIntlClientProvider } from 'next-intl';
 
-import '../globals.css';
-import { isLocale, isRTL } from '@/lib/utils';
-import { cookies } from 'next/headers';
+// * utils
+import { NextProps } from '@/lib/types';
+import { isRTL, isLocale } from '@/lib/utils';
 
-export default async function LocaleLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}) {
+import '../globals.css';
+
+const RootLayout = async ({ params, children }: NextProps<{ locale: string }>) => {
   const { locale } = await params;
   if (!isLocale(locale)) return notFound();
 
@@ -25,12 +21,7 @@ export default async function LocaleLayout({
   const mode = _cookies.get('mode')?.value;
 
   return (
-    <html
-      dir={dir}
-      lang={locale}
-      className={mode ?? ''}
-      suppressHydrationWarning
-    >
+    <html dir={dir} lang={locale} className={mode ?? ''} suppressHydrationWarning>
       <body>
         <NextIntlClientProvider>
           <MUIProvider dir={dir}>{children}</MUIProvider>
@@ -38,4 +29,6 @@ export default async function LocaleLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

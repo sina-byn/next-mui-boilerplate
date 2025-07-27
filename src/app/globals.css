@@ -1,4 +1,6 @@
-@import 'tailwindcss';
+@layer theme, mui, components, utilities;
+@import 'tailwindcss/theme' layer(theme);
+@import 'tailwindcss/utilities' layer(utilities);
 
 @custom-variant dark (&:where(.dark, .dark *));
 
