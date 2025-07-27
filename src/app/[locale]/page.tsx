@@ -8,7 +8,7 @@ const HomePage = async () => {
   const t = await getTranslations('HomePage');
 
   return (
-    <article className='h-dvh flex flex-col items-center justify-center gap-y-4'>
+    <article className='flex h-dvh flex-col items-center justify-center gap-y-4'>
       <h1>{t('title')}</h1>
 
       <ThemeSelect />
