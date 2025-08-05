@@ -2,6 +2,7 @@ import { Link } from '@/i18n/navigation';
 import { getTranslations } from 'next-intl/server';
 
 // * components
+import UIIcon from '@/components/UIIcon';
 import ThemeSelect from '@/components/ThemeSelect';
 
 const HomePage = async () => {
@@ -9,6 +10,9 @@ const HomePage = async () => {
 
   return (
     <article className='flex h-dvh flex-col items-center justify-center gap-y-4'>
+      <UIIcon icon='acorn' />
+      <UIIcon icon='check' />
+      <UIIcon icon='assembly' />
       <h1>{t('title')}</h1>
 
       <ThemeSelect />
