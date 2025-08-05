@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "npx simple-git-hooks"
+    "prepare": "npx simple-git-hooks",
+    "icons": "npx sprite -i _icons && node scripts/icons.mjs"
   },
   "lint-staged": {
     "*.{jsx,tsx,js,ts,scss,sass,css,json,html}": [
