@@ -1,7 +1,7 @@
 import MUIThemeProvider from './MUITheme';
 
 import { InitColorSchemeScript } from '@mui/material';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 // * types
 type MUIProviderProps = { dir: 'rtl' | 'ltr'; children: React.ReactNode };
